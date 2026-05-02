@@ -1,0 +1,78 @@
+{
+  "version": 2,
+  "config": {
+    "enableForAllApps": false,
+    "appList": {
+      "com.google.android.gms": {
+        "enable": true,
+        "useWhitelist": false,
+        "excludeSystemApps": true,
+        "packages": [
+          "com.topjohnwu.magisk",
+          "io.github.lsposed.manager",
+          "org.lsposed.manager",
+          "me.weishu.exp",
+          "com.elderdrivers.riru.edxp",
+          "de.robv.android.xposed.installer",
+          "org.meowcat.edxposed.manager",
+          "io.github.vvb2060.keyattestation",
+          "rikka.safetynetchecker",
+          "com.scottyab.rootbeer",
+          "com.scottyab.rootbeer.sample",
+          "com.devadvance.rootcloak",
+          "com.devadvance.rootcloakplus",
+          "com.zhenxi.hunter",
+          "icu.nullptr.nativetest",
+          "icu.nullptr.applistdetector",
+          "com.reveny.nativechecker",
+          "com.reveny.environmentchecker",
+          "com.reveny.rootchecker",
+          "com.byxiaorun.detector",
+          "io.github.huskydg.memorydetector",
+          "com.OrangeEnvironment.Detector",
+          "me.garfieldhan.holmes",
+          "luna.safe.luna",
+          "io.liankong.riskdetector",
+          "com.studio.duckdetector",
+          "com.eltavine.duckdetector",
+          "com.rem01gaming.disclosure",
+          "com.chunqiunativecheck",
+          "com.junge.algorithmAidePro",
+          "chunqiu.safe",
+          "com.byyoung.setting"
+        ]
+      },
+      "com.android.vending": {
+        "enable": true,
+        "useWhitelist": false,
+        "excludeSystemApps": true,
+        "packages": [
+          "com.topjohnwu.magisk",
+          "io.github.lsposed.manager",
+          "org.lsposed.manager",
+          "me.weishu.exp",
+          "com.elderdrivers.riru.edxp",
+          "de.robv.android.xposed.installer",
+          "org.meowcat.edxposed.manager",
+          "io.github.vvb2060.keyattestation",
+          "rikka.safetynetchecker",
+          "com.scottyab.rootbeer",
+          "com.scottyab.rootbeer.sample",
+          "com.zhenxi.hunter",
+          "icu.nullptr.nativetest"
+        ]
+      },
+      "com.google.android.gsf": {
+        "enable": true,
+        "useWhitelist": false,
+        "excludeSystemApps": true,
+        "packages": [
+          "com.topjohnwu.magisk",
+          "io.github.lsposed.manager",
+          "org.lsposed.manager",
+          "me.weishu.exp"
+        ]
+      }
+    }
+  }
+}
