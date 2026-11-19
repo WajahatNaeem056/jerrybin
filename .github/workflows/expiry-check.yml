@@ -1,47 +1,37 @@
 
-name: SSL Certificate Expiry Checker
+name: Certificate Expiry Checker
 
 on:
-  push:
-    paths:
-      - 'certs/**'
-      - '.github/workflows/expiry-check.yml'
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'
 
 jobs:
-  check-expiry:
+  check:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check SSL certificates
+      - name: Check certificates
         shell: bash
         run: |
           shopt -s nullglob
           files=(certs/*.pem certs/*.crt)
 
           if [ ${#files[@]} -eq 0 ]; then
-            echo "No SSL certificates found in certs/"
+            echo "No certificates found."
             exit 0
           fi
 
           for file in "${files[@]}"; do
-            echo "Checking: $file"
+            echo ""
+            echo "File: $file"
 
             expiry=$(openssl x509 -in "$file" -noout -enddate)
-            date_value="${expiry#notAfter=}"
-            iso_date=$(date -u -d "$date_value" '+%Y-%m-%dT%H:%M:%SZ')
+            expiry=${expiry#notAfter=}
 
-            echo "Expiry: $iso_date"
+            iso=$(date -u -d "$expiry" '+%Y-%m-%dT%H:%M:%SZ')
 
-            if ! openssl x509 -in "$file" -checkend 0 -noout; then
-              echo "Status: EXPIRED"
-            else
-              echo "Status: VALID"
-            fi
+            echo "EXPIRES_AT: $iso"
           done
           
